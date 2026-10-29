@@ -1,0 +1,23 @@
+[package]
+name = "rust-actor-system"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Базова акторна система для виконання конкурентних задач у Rust"
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "actor_system"
+path = "src/lib.rs"
+
+[[bin]]
+name = "actor-system"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+futures = "0.3.34"
+log = "0.4.34"
+thiserror = "2.0.21"
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "macros", "sync", "time", "io-std", "io-util"] }
